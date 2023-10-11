@@ -6,11 +6,17 @@ class Planet{
         this.radius = r
         this.force  = [0,0]
         this.color  = c
+        this.moves  = true
     }
 
-    updateVel(timeStep){
+    updateVel(timeStep, maxVel){
         let a = vec2.divSca(this.force,this.mass)
         this.vel = vec2.add(this.vel,vec2.multSca(a,timeStep))
+        let mag = vec2.dis(this.vel)
+        if (mag > maxVel){
+            let dir = vec2.divSca(this.vel,mag)
+            this.vel = vec2.multSca(dir,maxVel)
+        }
         this.force = [0,0]
     }
 
