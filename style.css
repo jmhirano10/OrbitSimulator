@@ -6,3 +6,22 @@ html, body {
     width: 100vw;
     height: 100vh;
 }
+canvas {
+    position: absolute;
+    z-index: 0;
+}
+.ui {
+    position: absolute;
+    z-index: 1;
+    padding: 15px;
+}
+.config {
+    padding: 25px;
+    margin: 5px;
+    border-radius: 50%;
+    border: none;
+    background-color: black;
+}
+.config:hover {
+    background-color: bisque;
+}
